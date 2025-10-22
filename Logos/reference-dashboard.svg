@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 746" width="1024" height="746">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#1e40af"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="1024" height="746" fill="#0f172a"/>
+  <g opacity="0.7">
+    <rect x="140" y="110" rx="24" ry="24" width="744" height="480" fill="#111827" stroke="#ffffff33"/>
+    <rect x="140" y="110" rx="24" ry="24" width="744" height="480" fill="#ffffff22" filter="url(#blur)"/>
+    <g transform="translate(168,140)">
+      <circle cx="16" cy="16" r="6" fill="#ef4444"/>
+      <circle cx="36" cy="16" r="6" fill="#f59e0b"/>
+      <circle cx="56" cy="16" r="6" fill="#10b981"/>
+    </g>
+    <g transform="translate(168,188)">
+      <text fill="#ffffffcc" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">BlueRock Pvt Ltd</text>
+      <text y="32" fill="#ffffff99" font-family="Inter, Arial, sans-serif" font-size="16">Software Data Analytics</text>
+    </g>
+    <g transform="translate(168,256)">
+      <rect x="0" y="0" width="420" height="36" rx="18" fill="#1f2937" stroke="#ffffff22"/>
+      <rect x="0" y="0" width="235" height="36" rx="18" fill="url(#g)"/>
+      <text x="12" y="24" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="14">Seed Funding 56%</text>
+    </g>
+    <g transform="translate(168,316)" fill="#1f2937">
+      <rect x="0" y="0" width="160" height="32" rx="16" stroke="#ffffff22"/>
+      <rect x="184" y="0" width="160" height="32" rx="16" stroke="#ffffff22"/>
+      <rect x="368" y="0" width="160" height="32" rx="16" stroke="#ffffff22"/>
+    </g>
+    <g transform="translate(168,380)">
+      <text fill="#ffffffdd" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">$ 789,314,350.00</text>
+      <text y="26" fill="#ffffff88" font-family="Inter, Arial, sans-serif" font-size="14">Available Capital</text>
+    </g>
+    <g transform="translate(168,436)">
+      <text fill="#ffffffcc" font-family="Inter, Arial, sans-serif" font-size="16">Deal History</text>
+      <g transform="translate(0,28)">
+        <rect x="0" y="0" width="240" height="36" rx="18" fill="#1f2937" stroke="#ffffff22"/>
+        <text x="12" y="24" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="14">$ 766,250.00</text>
+      </g>
+      <g transform="translate(260,28)">
+        <rect x="0" y="0" width="240" height="36" rx="18" fill="#1f2937" stroke="#ffffff22"/>
+        <text x="12" y="24" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="14">$ 350,000.00</text>
+      </g>
+    </g>
+    <g transform="translate(700,436)">
+      <rect x="0" y="0" width="180" height="180" rx="36" fill="#1f2937" stroke="#ffffff22"/>
+      <text x="18" y="48" fill="#ffffffcc" font-family="Inter, Arial, sans-serif" font-size="15">Emails</text>
+      <circle cx="90" cy="110" r="42" fill="#ffffff"/>
+      <text x="64" y="118" fill="#0ea5e9" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">G</text>
+    </g>
+  </g>
+</svg>
