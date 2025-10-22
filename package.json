@@ -3,11 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "npx vite preview",
+    "preview": "vite preview",
     "logos:clean": "node ./scripts/remove-logo-backgrounds.mjs"
   },
   "dependencies": {
