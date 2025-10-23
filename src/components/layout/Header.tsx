@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Mail, Phone, MapPin } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navigation = [
@@ -89,42 +89,73 @@ export function Header() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden relative overflow-hidden mt-4 pt-4 pb-6 rounded-xl bg-background/60 backdrop-blur-xl ring-1 ring-white/10"
+              className="md:hidden fixed left-0 right-0 top-20 bottom-0 z-40 overflow-y-auto pt-6 pb-24 bg-background/60 backdrop-blur-xl ring-1 ring-white/10"
             >
               {/* Frosted glass texture overlay */}
               <div className="pointer-events-none absolute inset-0 opacity-35 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.12),transparent_45%),radial-gradient(ellipse_at_bottom_right,rgba(255,255,255,0.06),transparent_45%)]" />
 
-              {/* Centered logo inside mobile menu */}
-              <div className="flex items-center justify-center mb-4">
-                <img
-                  src={'/Logo principal/supremo extendida.png'}
-                  alt="Supremo Inova - Logo extendida"
-                  className="h-10 w-auto object-contain drop-shadow-sm"
-                  width={120}
-                  height={30}
-                  loading="eager"
-                  decoding="async"
-                />
-              </div>
+              <div className="container px-4 sm:px-6 lg:px-8">
+                {/* Centered logo inside mobile menu */}
+                <div className="flex items-center justify-center mb-6">
+                  <img
+                    src={'/Logo principal/supremo extendida.png'}
+                    alt="Supremo Inova - Logo extendida"
+                    className="h-12 w-auto object-contain drop-shadow-sm"
+                    width={144}
+                    height={36}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
 
-              <div className="flex flex-col space-y-4">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block py-3 min-h-[44px] text-base font-medium transition-colors duration-200 hover:text-accent ${
-                      location.pathname === item.href
-                        ? 'text-accent'
-                        : 'text-text-secondary'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {/* Navigation links */}
+                <div className="flex flex-col space-y-4">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`block py-3 min-h-[44px] text-base font-medium transition-colors duration-200 hover:text-accent ${
+                        location.pathname === item.href
+                          ? 'text-accent'
+                          : 'text-text-secondary'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Contact & address — mobile only */}
+                <div className="mt-8 border-t border-white/10 pt-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Mail size={18} className="text-accent" />
+                    <a
+                      href="mailto:contato@supremoinova.com"
+                      className="text-text-secondary hover:text-white transition-colors text-sm"
+                    >
+                      contato@supremoinova.com
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone size={18} className="text-accent" />
+                    <a
+                      href="tel:+55 (11) 99999-9999"
+                      className="text-text-secondary hover:text-white transition-colors text-sm"
+                    >
+                      +55 (11) 99999-9999
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin size={18} className="text-accent" />
+                    <span className="text-text-secondary text-sm">
+                      São Paulo, SP - Brasil
+                    </span>
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
