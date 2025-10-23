@@ -28,6 +28,7 @@ export function About() {
     <main className="min-h-screen bg-background">
       {/* HERO */}
       <section className="relative overflow-hidden">
+        <div className="bg-waves" />
         <div className="container section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <motion.div
@@ -61,7 +62,7 @@ export function About() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-surface border border-border rounded-2xl p-8 linear-glow">
+              <div className="glass-card-primary p-8">
                 <div className="grid grid-cols-2 gap-6">
                   {[0, 1, 2, 3].map((i) => (
                     <motion.div
@@ -70,12 +71,12 @@ export function About() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 + i * 0.05 }}
                       viewport={{ once: true }}
-                      className="bg-background/60 backdrop-blur border border-border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                      className="glass-card-secondary p-4"
                     >
-                      <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span className="text-sm font-medium text-accent">{['MK', 'AU', 'TEC', 'DS'][i]}</span>
+                      <div className="icon-container w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
+                        <span className="text-sm font-medium text-[#f7f8f8]">{['MK', 'AU', 'TEC', 'DS'][i]}</span>
                       </div>
-                      <p className="text-xs text-text-muted font-light text-center">
+                      <p className="muted-on-glass text-xs font-light text-center">
                         {['Marketing', 'Automação', 'Tecnologia', 'Dados'][i]}
                       </p>
                     </motion.div>
@@ -115,13 +116,13 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group bg-surface/60 backdrop-blur border border-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:translate-y-[-2px] transition-all linear-glow"
+                  className="group glass-card-primary p-6"
                 >
-                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-accent group-hover:scale-105 transition-transform" />
+                  <div className="icon-container w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="icon-premium w-6 h-6 text-[#f7f8f8] group-hover:scale-105 transition-transform" />
                   </div>
-                  <h3 className="text-base font-medium text-[#f7f8f8] mb-2">{item.title}</h3>
-                  <p className="text-sm text-text-muted font-light leading-relaxed">{item.description}</p>
+                  <h3 className="text-on-glass text-base font-medium mb-2">{item.title}</h3>
+                  <p className="muted-on-glass text-sm font-light leading-relaxed">{item.description}</p>
                 </motion.div>
               )
             })}
@@ -148,16 +149,16 @@ export function About() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-surface/60 backdrop-blur border border-border rounded-2xl p-8 linear-glow"
+              className="glass-card-primary p-8"
             >
               <div className="space-y-4">
-                <p className="text-text-secondary font-light leading-relaxed">
+                <p className="muted-on-glass font-light leading-relaxed">
                   Desde o primeiro dia, minha missão foi encarar problemas como oportunidades. Fundar a Supremo Inova nasceu do desejo de transformar desafios em conquistas e fazer com que cada empresa enxergue além do óbvio — enxergue o extraordinário.
                 </p>
-                <p className="text-text-secondary font-light leading-relaxed">
+                <p className="muted-on-glass font-light leading-relaxed">
                   Nossa jornada é construída por histórias reais: empresas que, ao confiar em nosso olhar estratégico, descobriram caminhos antes invisíveis. Junto ao nosso time multidisciplinar, usamos princípios de psicologia e neurociência para entender a fundo o que realmente move pessoas e mercados.
                 </p>
-                <p className="text-text-secondary font-light leading-relaxed">
+                <p className="muted-on-glass font-light leading-relaxed">
                   Acreditamos que, ao alinhar emoção, razão e tecnologia, aceleramos evoluções. E é assim que você, cliente, se sentirá com a gente: confiante, motivado e pronto para bater suas metas, porque sabemos que toda empresa é grande — ela só precisa de alguém para revelar isso.
                 </p>
               </div>

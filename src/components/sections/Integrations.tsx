@@ -61,6 +61,8 @@ const integrations = [
 export function Integrations() {
   return (
     <section className="py-24 bg-background-subtle relative overflow-hidden">
+      {/* Background waves decor */}
+      <div className="bg-waves" />
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -88,19 +90,19 @@ export function Integrations() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className="group card card-integration linear-glow p-5 md:p-4"
+                  className="group glass-card-secondary card-hover p-5 md:p-4"
                 >
                   <div className="text-center">
-                    <div className="w-14 h-14 md:w-12 md:h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/20 transition-colors">
-                      <Icon className="w-7 h-7 md:w-6 md:h-6 text-accent" />
+                    <div className="icon-container w-12 h-12 mx-auto mb-3 rounded-xl">
+                      <Icon className="icon-premium w-6 h-6 text-[#f7f8f8]" />
                     </div>
-                    <h3 className="text-sm font-medium text-[#f7f8f8] mb-1">
+                    <h3 className="text-sm font-medium text-on-glass mb-1">
                       {integration.name}
                     </h3>
-                    <p className="text-xs text-text-muted font-light mb-2">
+                    <p className="text-xs muted-on-glass font-light mb-2">
                       {integration.description}
                     </p>
-                    <span className="inline-block px-2 py-1 text-xs font-medium bg-background border border-border rounded-md text-text-secondary">
+                    <span className="inline-block px-2 py-1 text-xs font-medium glass-card-secondary">
                       {integration.category}
                     </span>
                   </div>
@@ -116,16 +118,16 @@ export function Integrations() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <div className="bg-surface border border-border rounded-xl p-6 linear-glow">
+            <div className="glass-card-primary p-6">
               <div className="flex items-center justify-center mb-4">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
-                  <Zap className="w-5 h-5 text-accent" />
+                <div className="icon-container w-12 h-12 mr-3 rounded-xl">
+                  <Zap className="icon-premium w-6 h-6 text-[#f7f8f8]" />
                 </div>
-                <h3 className="text-lg font-medium text-[#f7f8f8]">
+                <h3 className="text-lg font-medium text-on-glass">
                   Integração personalizada
                 </h3>
               </div>
-              <p className="text-sm text-text-muted font-light leading-relaxed mb-4">
+              <p className="text-sm muted-on-glass font-light leading-relaxed mb-4">
                 Não encontrou a integração que precisa? Desenvolvemos conexões customizadas para qualquer API ou sistema.
               </p>
               <div className="flex justify-center">
