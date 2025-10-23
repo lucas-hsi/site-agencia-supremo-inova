@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from 'lucide-react'
+import LogoSVG from '../icons/LogoSVG'
 
 const navigation = {
   main: [
@@ -36,15 +37,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-6 group">
-              <img
-                src={'/Logos/logo.png'}
-                alt="Supremo Inova - Ícone"
-                className="h-10 w-10 object-contain drop-shadow-sm"
-                loading="eager"
-                decoding="async"
-                width={40}
-                height={40}
-              />
+              <LogoSVG size={44} className="drop-shadow-md" title="Supremo Inova" />
               {/* Texto removido para manter apenas a logo */}
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">

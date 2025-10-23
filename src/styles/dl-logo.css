@@ -1,0 +1,106 @@
+/* Scoped styles for AnimatedDLLogo component */
+.dl-logo {
+  /* default size that can be overridden inline via style prop */
+  --size: 64px;
+  --bg: transparent;
+  --white: #ffffff;
+  --lilac: #dfe6ff;
+  --blue-1: #2eccff;
+  --blue-2: #1797ff;
+  --blue-3: #0066d1;
+  --gap: calc(var(--size) * 0.06);
+  --block: calc((var(--size) - var(--gap) * 2) / 7);
+}
+
+.dl-logo .logo-wrap {
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Common square style used for the diagonal tiles */
+.dl-logo .tile {
+  position: absolute;
+  width: var(--block);
+  height: var(--block);
+  border-radius: 3px;
+  transform: translate3d(0, 40px, 0) scale(.92);
+  opacity: 0;
+  animation: dl-assemble 600ms cubic-bezier(.2,.9,.2,1) forwards;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+}
+
+/* positions for the diagonal tiles */
+.dl-logo .t0 { left: calc(var(--gap) + 0 * var(--block)); top: calc(var(--gap) + 6 * var(--block)); animation-delay: 0ms; background: var(--lilac); }
+.dl-logo .t1 { left: calc(var(--gap) + 1 * var(--block)); top: calc(var(--gap) + 5 * var(--block)); animation-delay: 80ms; background: var(--blue-1); }
+.dl-logo .t2 { left: calc(var(--gap) + 2 * var(--block)); top: calc(var(--gap) + 4 * var(--block)); animation-delay: 160ms; background: var(--blue-2); }
+.dl-logo .t3 { left: calc(var(--gap) + 3 * var(--block)); top: calc(var(--gap) + 3 * var(--block)); animation-delay: 240ms; background: var(--blue-3); }
+.dl-logo .t4 { left: calc(var(--gap) + 4 * var(--block)); top: calc(var(--gap) + 2 * var(--block)); animation-delay: 320ms; background: var(--blue-2); }
+.dl-logo .t5 { left: calc(var(--gap) + 5 * var(--block)); top: calc(var(--gap) + 1 * var(--block)); animation-delay: 400ms; background: var(--lilac); }
+
+/* white corner L shapes */
+.dl-logo .corner {
+  position: absolute;
+  width: calc(var(--block) * 3 + var(--gap));
+  height: calc(var(--block) * 3 + var(--gap));
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0,-30px,0) scale(.98);
+  animation: dl-assemble 700ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+.dl-logo .corner.tl { left: 0; top: 0; animation-delay: 120ms; }
+.dl-logo .corner.br { right: 0; bottom: 0; animation-delay: 480ms; transform: translate3d(0,30px,0) scale(.98); }
+
+/* Compose the L using pseudo-rectangles */
+.dl-logo .corner .h,
+.dl-logo .corner .v {
+  position: absolute;
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* top-left L */
+.dl-logo .corner.tl .h { left: calc(var(--block) * 1.1); right: calc(var(--block) * -0.2); top: calc(var(--block) * 0.08); height: calc(var(--block) * 1.2); }
+.dl-logo .corner.tl .v { left: calc(var(--block) * 0.08); top: calc(var(--block) * 1.1); bottom: calc(var(--block) * -0.2); width: calc(var(--block) * 1.2); }
+
+/* bottom-right L (mirror) */
+.dl-logo .corner.br .h { right: calc(var(--block) * 1.1); left: calc(var(--block) * -0.2); bottom: calc(var(--block) * 0.08); height: calc(var(--block) * 1.2); }
+.dl-logo .corner.br .v { right: calc(var(--block) * 0.08); bottom: calc(var(--block) * 1.1); top: calc(var(--block) * -0.2); width: calc(var(--block) * 1.2); }
+
+/* animations */
+@keyframes dl-assemble {
+  0% { transform: translate3d(0,20px,0) scale(.96); opacity: 0; filter: blur(6px); }
+  60% { opacity: 1; transform: translate3d(0,-6px,0) scale(1.02); filter: blur(0); }
+  100% { transform: translate3d(0,0,0) scale(1); opacity: 1; filter: blur(0); }
+}
+
+@keyframes dl-pop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+/* subtle loop breathing after assembled */
+.dl-logo .logo-wrap.assembled .tile,
+.dl-logo .logo-wrap.assembled .corner {
+  animation: dl-pop 3500ms ease-in-out infinite;
+}
+.dl-logo .logo-wrap.assembled .t0 { animation-delay: 900ms; }
+.dl-logo .logo-wrap.assembled .t1 { animation-delay: 950ms; }
+.dl-logo .logo-wrap.assembled .t2 { animation-delay: 1000ms; }
+.dl-logo .logo-wrap.assembled .t3 { animation-delay: 1050ms; }
+.dl-logo .logo-wrap.assembled .t4 { animation-delay: 1100ms; }
+.dl-logo .logo-wrap.assembled .t5 { animation-delay: 1150ms; }
+.dl-logo .logo-wrap.assembled .corner.tl { animation-delay: 900ms; }
+.dl-logo .logo-wrap.assembled .corner.br { animation-delay: 950ms; }
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .dl-logo .tile,
+  .dl-logo .corner { animation: none !important; transform: none !important; opacity: 1 !important; }
+  .dl-logo .logo-wrap.assembled .tile,
+  .dl-logo .logo-wrap.assembled .corner { animation: none !important; }
+}
