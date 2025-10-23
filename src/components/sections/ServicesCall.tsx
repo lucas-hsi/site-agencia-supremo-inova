@@ -99,13 +99,13 @@ export function ServicesCall() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/services"
+                  to="/servicos"
                   className="linear-button"
                 >
                   <span>Conhecer serviços</span>
                 </Link>
                 <Link
-                  to="/contact"
+                  to="/contato"
                   className="linear-button-secondary"
                 >
                   <span>Solicitar proposta</span>
