@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Globe, Lightbulb, Rocket } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { TeamSection } from '../components/sections/TeamSection'
 
 export function About() {
   const values = [
@@ -180,7 +179,7 @@ export function About() {
       </section>
 
       {/* TIME & DIFERENCIAIS */}
-      <TeamSection />
+      {/* Removido: <TeamSection /> */}
 
       {/* CTA */}
       <section className="py-20">
