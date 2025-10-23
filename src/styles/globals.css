@@ -397,7 +397,11 @@ html {
 .btn-mini { @apply px-2.5 py-1.5 text-xs rounded-lg; }
 
 .btn-icon > svg { @apply w-4 h-4 mr-2; }
-
+/* Button icon color highlights */
+.linear-button svg { color: #3b82f6; }
+.linear-button:hover svg { color: #60a5fa; }
+.linear-button-ghost svg { color: #3b82f6; }
+.linear-button-ghost:hover svg { color: #60a5fa; }
 /* Loader for buttons */
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -497,11 +501,13 @@ html {
   .glass-card-primary {
     position: relative;
     border-radius: 1rem; /* rounded-2xl */
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px) saturate(120%);
-    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    background: rgba(12, 12, 14, 0.68); /* dark frosted base */
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55), 0 6px 18px rgba(0, 0, 0, 0.35);
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
   }
 
   .glass-card-primary::before {
@@ -510,7 +516,7 @@ html {
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.08) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.025) 40%, rgba(255,255,255,0) 100%);
   }
 
   .glass-card-primary::after {
@@ -519,17 +525,19 @@ html {
     inset: 1px;
     border-radius: inherit;
     pointer-events: none;
-    box-shadow: inset 0 1px 24px rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 1px 24px rgba(255, 255, 255, 0.035), inset 0 -1px 0 rgba(255,255,255,0.03);
   }
 
   .glass-card-secondary {
     position: relative;
     border-radius: 0.75rem; /* rounded-xl */
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(12px) saturate(115%);
-    -webkit-backdrop-filter: blur(12px) saturate(115%);
+    background: rgba(12, 12, 14, 0.6); /* dark frosted base, slightly softer */
+    backdrop-filter: blur(16px) saturate(130%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.3);
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
   }
 
   .glass-card-secondary::before {
@@ -538,15 +546,15 @@ html {
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0) 100%);
   }
 
   .card-hover {
     transition: transform 300ms ease, box-shadow 300ms ease;
   }
   .card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    transform: translateY(-6px);
+    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.6), 0 8px 22px rgba(0, 0, 0, 0.4);
   }
 
   /* Premium Icons */
@@ -602,4 +610,21 @@ html {
   .muted-on-glass {
     color: #9ca3af;
   }
+}
+
+/* Header behavior when services overlay is open */
+body.services-open .app-header {
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border: 0 !important;
+}
+
+/* Optional: fade out header for smoother UX */
+body.services-open .app-header,
+body.services-open .app-header * {
+  opacity: 0;
+  pointer-events: none;
 }

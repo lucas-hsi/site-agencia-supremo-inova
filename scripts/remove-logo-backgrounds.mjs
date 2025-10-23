@@ -6,7 +6,8 @@ import { removeBackground } from '@imgly/background-removal-node'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const projectRoot = path.resolve(__dirname, '..')
-const logosDir = path.join(projectRoot, 'Logos')
+// Directory can be provided via CLI arg, defaults to 'Logos'
+const targetDir = process.argv[2] ? path.resolve(projectRoot, process.argv[2]) : path.join(projectRoot, 'Logos')
 
 function toFileUrl(p) {
   // Convert Windows path to file URL
@@ -27,15 +28,15 @@ async function processFile(filePath) {
 }
 
 async function main() {
-  console.log(`Removing backgrounds in: ${logosDir}`)
-  const entries = await readdir(logosDir)
-  const targets = entries.filter((f) => /\.(png|jpg|jpeg)$/i.test(f))
+  console.log(`Removing backgrounds in: ${targetDir}`)
+  const entries = await readdir(targetDir)
+  const targets = entries.filter((f) => /(\.png|\.jpg|\.jpeg)$/i.test(f))
   if (targets.length === 0) {
-    console.log('No image files found in Logos directory.')
+    console.log('No image files found in target directory.')
     return
   }
   for (const fname of targets) {
-    const filePath = path.join(logosDir, fname)
+    const filePath = path.join(targetDir, fname)
     await processFile(filePath)
   }
   console.log(`Done. Processed ${targets.length} file(s).`)

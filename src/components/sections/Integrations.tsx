@@ -118,7 +118,7 @@ export function Integrations() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <div className="glass-card-primary p-6">
+            <div className="group glass-card-primary p-6">
               <div className="flex items-center justify-center mb-4">
                 <div className="icon-container w-12 h-12 mr-3 rounded-xl">
                   <Zap className="icon-premium w-6 h-6 text-[#f7f8f8]" />

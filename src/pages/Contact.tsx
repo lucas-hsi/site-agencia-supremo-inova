@@ -9,11 +9,11 @@ export function Contact() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div className="glass-card-primary p-6">
+          <div className="group glass-card-primary card-hover p-6">
             <h3 className="text-on-glass font-semibold">Fale conosco</h3>
             <p className="muted-on-glass mt-3">Preencha o formulário para iniciar uma conversa.</p>
           </div>
-          <div className="glass-card-secondary p-6">
+          <div className="group glass-card-secondary card-hover p-6">
             <h3 className="text-on-glass font-semibold">Informações</h3>
             <p className="muted-on-glass mt-3">E-mail, telefone e redes sociais.</p>
           </div>

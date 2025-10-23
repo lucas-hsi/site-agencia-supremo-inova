@@ -43,7 +43,7 @@ export function Specialties() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="glass-card-primary card-hover p-6"
+                className="group glass-card-primary card-hover p-6"
               >
                 <div className="icon-container w-12 h-12 mb-4 rounded-xl">
                   <Icon className="icon-premium w-6 h-6 text-[#f7f8f8]" />

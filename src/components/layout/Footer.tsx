@@ -35,11 +35,17 @@ export function Footer() {
         <div className="py-20 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-medium text-lg">S</span>
-            </div>
-            <span className="text-xl font-light text-white">Supremo Inova</span>
+            <Link to="/" className="flex items-center space-x-2 mb-6 group">
+              <img
+                src={'/Logo principal/Logo .png'}
+                alt="Supremo Inova - Ícone"
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain drop-shadow-sm group-hover:brightness-110 transition"
+                width={32}
+                height={32}
+                loading="lazy"
+                decoding="async"
+              />
+              {/* Texto removido para manter apenas a logo */}
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">
               Transformamos ideias em experiências digitais extraordinárias. 

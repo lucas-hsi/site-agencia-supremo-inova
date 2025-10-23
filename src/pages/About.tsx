@@ -62,7 +62,7 @@ export function About() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="glass-card-primary p-8">
+              <div className="group glass-card-primary card-hover p-8">
                 <div className="grid grid-cols-2 gap-6">
                   {[0, 1, 2, 3].map((i) => (
                     <motion.div
@@ -71,7 +71,7 @@ export function About() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 + i * 0.05 }}
                       viewport={{ once: true }}
-                      className="glass-card-secondary p-4"
+                      className="group glass-card-secondary card-hover p-4"
                     >
                       <div className="icon-container w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3">
                         <span className="text-sm font-medium text-[#f7f8f8]">{['MK', 'AU', 'TEC', 'DS'][i]}</span>
@@ -116,7 +116,7 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group glass-card-primary p-6"
+                  className="group glass-card-primary card-hover p-6"
                 >
                   <div className="icon-container w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                     <Icon className="icon-premium w-6 h-6 text-[#f7f8f8] group-hover:scale-105 transition-transform" />
@@ -149,7 +149,7 @@ export function About() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="glass-card-primary p-8"
+              className="group glass-card-primary card-hover p-8"
             >
               <div className="space-y-4">
                 <p className="muted-on-glass font-light leading-relaxed">

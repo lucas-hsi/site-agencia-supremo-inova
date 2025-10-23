@@ -1,1 +1,17 @@
+# Dependencies
 node_modules
+
+# Build output
+dist/
+
+# Local env
+.env
+.env.*
+
+# Vercel local state
+.vercel
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

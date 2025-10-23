@@ -53,11 +53,11 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.05 }}
               viewport={{ once: true }}
-              className="glass-card-primary card-hover p-6"
+              className="group glass-card-primary card-hover p-6"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="icon-container w-12 h-12 rounded-xl">
-                  <span className="icon-premium w-6 h-6 text-[#f7f8f8]">★</span>
+                  <span className="icon-premium w-6 h-6 text-amber-400">★</span>
                 </div>
                 <div>
                   <h3 className="text-on-glass text-base font-medium leading-tight">
@@ -73,7 +73,7 @@ export function Testimonials() {
               </p>
               <div className="mt-4 flex">
                 {Array.from({ length: t.rating }).map((_, i) => (
-                  <span key={i} className="text-on-glass">★</span>
+                  <span key={i} className="text-amber-400">★</span>
                 ))}
               </div>
             </motion.div>
