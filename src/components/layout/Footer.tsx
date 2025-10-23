@@ -37,13 +37,13 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-6 group">
               <img
-                src={'/Logo principal/Logo .png'}
+                src={'/Logos/logo.png'}
                 alt="Supremo Inova - Ícone"
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain drop-shadow-sm group-hover:brightness-110 transition"
-                width={32}
-                height={32}
-                loading="lazy"
+                className="h-10 w-10 object-contain drop-shadow-sm"
+                loading="eager"
                 decoding="async"
+                width={40}
+                height={40}
               />
               {/* Texto removido para manter apenas a logo */}
             </Link>

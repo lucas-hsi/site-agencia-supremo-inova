@@ -46,7 +46,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center justify-center md:justify-start group col-start-2 justify-self-center md:justify-self-start">
             <img
-              src={'/Logo principal/supremo extendida.png'}
+              src={'/Logos/supremo-extendida.png'}
               alt="Supremo Inova - Logo extendida"
               className="h-12 sm:h-14 md:h-16 w-auto object-contain drop-shadow-sm group-hover:brightness-110 transition"
               width={144}
@@ -100,15 +100,15 @@ export function Header() {
 
               <div className="container px-4 sm:px-6 lg:px-8">
                 {/* Centered logo inside mobile menu */}
-                <div className="flex items-center justify-center mb-6">
+                <div className="flex justify-center items-center pb-6">
                   <img
-                    src={'/Logo principal/supremo extendida.png'}
+                    src={'/Logos/supremo-extendida.png'}
                     alt="Supremo Inova - Logo extendida"
-                    className="h-12 w-auto object-contain drop-shadow-sm"
-                    width={144}
-                    height={36}
+                    className="h-16 w-auto sm:h-20"
                     loading="eager"
                     decoding="async"
+                    width={320}
+                    height={100}
                   />
                 </div>
 
