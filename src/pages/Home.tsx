@@ -15,7 +15,8 @@ import { ArrowRight, BarChart3, Brain, Bot, LayoutDashboard, LineChart } from 'l
 
 export function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background relative">
+      <div className="bg-waves" />
       <Hero />
       <Specialties />
       <ClientResults />
