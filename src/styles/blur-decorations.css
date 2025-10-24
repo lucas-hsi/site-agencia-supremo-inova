@@ -1,0 +1,152 @@
+/* ====================================
+   ELEMENTOS DECORATIVOS COM BLUR
+   Adiciona esferas coloridas com blur
+   em pontos estratégicos da página
+==================================== */
+
+/* Container principal para decorações */
+.blur-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Estilo base para todas as decorações */
+.blur-decoration {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+}
+
+/* Decoração 1 - Roxo/Azul no topo esquerdo */
+.blur-decoration-1 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+/* Decoração 2 - Rosa no topo direito */
+.blur-decoration-2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  top: 100px;
+  right: -100px;
+  animation-delay: 5s;
+}
+
+/* Decoração 3 - Laranja/Amarelo no meio esquerdo */
+.blur-decoration-3 {
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+  animation-delay: 10s;
+}
+
+/* Decoração 4 - Azul/Ciano no meio direito */
+.blur-decoration-4 {
+  width: 380px;
+  height: 380px;
+  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  top: 40%;
+  right: -150px;
+  animation-delay: 15s;
+}
+
+/* Decoração 5 - Verde/Azul embaixo esquerdo */
+.blur-decoration-5 {
+  width: 420px;
+  height: 420px;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  bottom: -100px;
+  left: 100px;
+  animation-delay: 7s;
+}
+
+/* Decoração 6 - Roxo/Rosa embaixo direito */
+.blur-decoration-6 {
+  width: 480px;
+  height: 480px;
+  background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+  bottom: -150px;
+  right: -100px;
+  animation-delay: 12s;
+}
+
+/* Animação de flutuação suave */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.02);
+  }
+}
+
+/* Responsivo - Mobile */
+@media (max-width: 768px) {
+  .blur-decoration {
+    filter: blur(60px);
+    opacity: 0.3;
+  }
+  
+  .blur-decoration-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+  }
+  
+  .blur-decoration-2 {
+    width: 250px;
+    height: 250px;
+    top: 50px;
+    right: -80px;
+  }
+  
+  .blur-decoration-3 {
+    width: 280px;
+    height: 280px;
+    left: -120px;
+  }
+  
+  .blur-decoration-4 {
+    width: 230px;
+    height: 230px;
+    right: -100px;
+  }
+  
+  .blur-decoration-5 {
+    width: 260px;
+    height: 260px;
+    bottom: -80px;
+    left: 50px;
+  }
+  
+  .blur-decoration-6 {
+    width: 290px;
+    height: 290px;
+    bottom: -100px;
+    right: -80px;
+  }
+}
