@@ -628,3 +628,132 @@ body.services-open .app-header * {
   opacity: 0;
   pointer-events: none;
 }
+
+/* Global Centering - scoped to page content only */
+@layer base {
+  /* Ensure root containers take full width */
+  html, body, #root {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+/* Page content wrapper to centralize everything between header and footer */
+.page-content {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Center sections only inside page content */
+.page-content section {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+@layer utilities {
+  /* Explicit hook to center any container */
+  .center-all {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Responsive centering — mobile, tablet, desktop */
+@media (max-width: 768px) {
+  .page-content,
+  .page-content section,
+  .page-content .container {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  /* Ensure common elements are centered horizontally */
+  .btn, .linear-button, .linear-button-ghost, .linear-button-secondary,
+  .card, .glass-card-primary, .glass-card-secondary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .page-content,
+  .page-content section,
+  .page-content .container {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .btn, .linear-button, .linear-button-ghost, .linear-button-secondary,
+  .card, .glass-card-primary, .glass-card-secondary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-content,
+  .page-content section,
+  .page-content .container {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .btn, .linear-button, .linear-button-ghost, .linear-button-secondary,
+  .card, .glass-card-primary, .glass-card-secondary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Hero background banner */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: -5rem;
+  padding-top: 5rem;
+}
+
+.hero-background {
+  position: absolute !important;
+  top: 0 !important; 
+  left: 0 !important; 
+  width: 100% !important; 
+  height: 100% !important;
+  background: url('/00c69a8abbe41d20263e894b65c250df.png') no-repeat center center !important;
+  background-size: cover !important;
+  z-index: 1 !important;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .hero-section { min-height: 180px; }
+  .hero-content { font-size: 1rem; padding: 1rem; }
+}
+.btn, .linear-button, .linear-button-ghost, .linear-button-secondary,
+.card, .glass-card-primary, .glass-card-secondary {
+margin-left: auto;
+margin-right: auto;
+}

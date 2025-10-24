@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Menu, X, ChevronLeft, Mail, Phone, MapPin } from 'lucide-react'
+import { Menu, X, ChevronLeft, Mail, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import LogoSVG from '../icons/LogoSVG'
+import AnimatedDLLogo from '../icons/AnimatedDLLogo'
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Sobre', href: '/sobre' },
   { name: 'Serviços', href: '/servicos' },
+  { name: 'Hub de Negócios', href: '/hub-negocios' },
   { name: 'Cases', href: '/cases' },
   { name: 'Parceiro', href: '/parceiro' },
   { name: 'Contato', href: '/contato' },

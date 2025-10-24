@@ -7,12 +7,15 @@ import Services from './pages/Services'
 import { Cases } from './pages/Cases'
 import { Partner } from './pages/Partner'
 import { Contact } from './pages/Contact'
+import Hub from './pages/Hub'
+import ScrollProgressBar from './components/ui/ScrollProgressBar'
 
 function App() {
   return (
     <div className="min-h-screen bg-background text-text-primary">
+      <ScrollProgressBar />
       <Header />
-      <main className="pt-20"> {/* Offset for fixed header */}
+      <main className="pt-20 page-content"> {/* Offset for fixed header + centrado apenas na área da página */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<About />} />
@@ -20,6 +23,7 @@ function App() {
           <Route path="/cases" element={<Cases />} />
           <Route path="/parceiro" element={<Partner />} />
           <Route path="/contato" element={<Contact />} />
+          <Route path="/hub-negocios" element={<Hub />} />
         </Routes>
       </main>
       <Footer />
