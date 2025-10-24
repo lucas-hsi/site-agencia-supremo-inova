@@ -75,10 +75,21 @@ export function Integrations() {
             <h2 className="text-3xl md:text-4xl font-semibold text-[#f7f8f8] mb-6">
               Nossas Integrações
             </h2>
-            <p className="text-lg text-text-muted font-light leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg text-text-muted font-light leading-relaxed max-w-3xl mx-auto mb-8">
               Conectamos seu ecossistema digital com as principais plataformas e APIs do mercado, 
               garantindo integração perfeita e automação inteligente.
             </p>
+            
+            {/* Texto de Integração Personalizada */}
+            <div className="text-center mt-8 mb-4">
+              <h3 className="text-xl md:text-2xl font-bold text-[#f7f8f8] mb-4">
+                Integração Personalizada
+              </h3>
+              <p className="text-base text-text-muted font-light leading-relaxed max-w-lg mx-auto">
+                Desenvolvemos conexões customizadas para qualquer API ou sistema. 
+                Sua solução única, perfeitamente integrada ao seu ecossistema.
+              </p>
+            </div>
           </motion.div>
 
           {/* Grid responsivo: 2 colunas no mobile, 4 no desktop */}
@@ -126,50 +137,7 @@ export function Integrations() {
             })}
           </div>
 
-          {/* Card de integração personalizada - destaque especial */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-12"
-          >
-            <div className="group glass-card-primary card-hover p-6 md:p-8 w-full max-w-2xl mx-auto relative overflow-hidden">
-              {/* Background gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative z-10 text-center">
-                {/* Ícone principal */}
-                <div className="relative mb-6">
-                  <div className="icon-container w-16 h-16 mx-auto rounded-3xl bg-gradient-to-br from-accent/30 to-accent/10 border-2 border-accent/30 flex items-center justify-center group-hover:from-accent/40 group-hover:to-accent/20 transition-all duration-300">
-                    <Zap className="w-8 h-8 text-accent group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  {/* Glow effect mais intenso */}
-                  <div className="absolute inset-0 rounded-3xl bg-accent/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                
-                {/* Título */}
-                <h3 className="text-xl md:text-2xl font-bold text-on-glass mb-4 group-hover:text-accent transition-colors duration-300">
-                  Integração Personalizada
-                </h3>
-                
-                {/* Descrição */}
-                <p className="text-base muted-on-glass font-light leading-relaxed mb-6 max-w-lg mx-auto">
-                  Desenvolvemos conexões customizadas para qualquer API ou sistema. 
-                  Sua solução única, perfeitamente integrada ao seu ecossistema.
-                </p>
-                
-                {/* CTA Button */}
-                <a 
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent/20 text-accent border border-accent/30 rounded-xl font-medium hover:bg-accent/30 hover:border-accent/50 hover:scale-105 transition-all duration-300 group/btn" 
-                  href="#integracao-customizada"
-                >
-                  <span>Solicitar Integração</span>
-                  <Zap className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
-                </a>
-              </div>
-            </div>
-          </motion.div>
+
         </div>
       </div>
     </section>
