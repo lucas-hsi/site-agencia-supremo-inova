@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
-import { Home } from './pages/Home'
+import Home from './pages/Home'
 import { About } from './pages/About'
 import Services from './pages/Services'
 import { Cases } from './pages/Cases'

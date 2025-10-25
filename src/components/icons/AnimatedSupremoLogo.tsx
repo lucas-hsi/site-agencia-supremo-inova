@@ -18,7 +18,7 @@ export default function AnimatedSupremoLogo({ className, title = 'Supremo Inova'
   if (shouldFallback) {
     return (
       <img
-        src={'/Logos/supremo-extendida.png'}
+        src={'/supremo extendida.png'}
         alt={title}
         className={className}
         loading="eager"

@@ -771,3 +771,57 @@ body.services-open .app-header * {
 margin-left: auto;
 margin-right: auto;
 }
+
+/* Hero glow effect from Cases page */
+.hero-glow {
+  position: absolute;
+  inset: -120px 0 auto 0;
+  height: 300px;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(50, 184, 198, 0.25), transparent 60%);
+  filter: blur(24px);
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Dark theme adjustments for Home page */
+.home-section {
+  color: #f7f8f8;
+}
+
+.home-section .text-text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.home-section .text-text-primary {
+  color: #ffffff !important;
+}
+
+.home-section .text-text-secondary {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.home-section .text-foreground {
+  color: #ffffff !important;
+}
+
+.home-section .bg-surface {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+
+.home-section .border-border {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.home-section .border-border-hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.home-section .bg-background {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
