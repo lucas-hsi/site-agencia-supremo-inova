@@ -12,7 +12,6 @@ const navigation = [
   { name: 'Serviços', href: '/servicos' },
   { name: 'Hub de Negócios', href: '/hub-negocios' },
   { name: 'Cases', href: '/cases' },
-  { name: 'Parceiro', href: '/parceiro' },
   { name: 'Contato', href: '/contato' },
 ]
 

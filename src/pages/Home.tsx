@@ -6,16 +6,10 @@ import { Testimonials } from '../components/sections/Testimonials'
 import { Integrations } from '../components/sections/Integrations'
 // import { TeamSection } from '../components/sections/TeamSection' // removido
 import { UpdatesAndProcess } from '../components/sections/UpdatesAndProcess'
-import { CasesPreview } from '../components/sections/CasesPreview'
-import { Cloud, Cpu, Server, Megaphone, ShoppingCart, MessageSquare, Zap, Globe, Shield, BarChart } from 'lucide-react'
-import referenceDashboard from '../../Logos/reference-dashboard.svg'
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { ArrowRight, BarChart3, Brain, Bot, LayoutDashboard, LineChart } from 'lucide-react'
 
 export function Home() {
   return (
-    <main className="min-h-screen bg-background relative">
+    <main className="min-h-screen bg-background relative overflow-x-hidden">
       <div className="bg-waves" />
       <Hero />
       <Specialties />

@@ -5,7 +5,7 @@ import { Home } from './pages/Home'
 import { About } from './pages/About'
 import Services from './pages/Services'
 import { Cases } from './pages/Cases'
-import { Partner } from './pages/Partner'
+
 import { Contact } from './pages/Contact'
 import Hub from './pages/Hub'
 import ScrollProgressBar from './components/ui/ScrollProgressBar'
@@ -21,7 +21,7 @@ function App() {
           <Route path="/sobre" element={<About />} />
           <Route path="/servicos" element={<Services />} />
           <Route path="/cases" element={<Cases />} />
-          <Route path="/parceiro" element={<Partner />} />
+
           <Route path="/contato" element={<Contact />} />
           <Route path="/hub-negocios" element={<Hub />} />
         </Routes>
