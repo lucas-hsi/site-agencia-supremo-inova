@@ -1,24 +1,50 @@
 import { motion } from 'framer-motion'
 import { Calendar, ArrowRight, FileText, Code, Rocket, CheckCircle } from 'lucide-react'
+import { useContactModal } from '../../hooks/useContactModal'
+import { Link } from 'react-router-dom'
 
 const updates = [
   {
     date: '15 Jan 2024',
     title: 'Integração completa com WhatsApp Business API',
     description: 'Sistema avançado de automação e atendimento via WhatsApp para empresas.',
-    category: 'Integração'
+    category: 'Integração',
+    slug: 'integracao-whatsapp-business-api'
   },
   {
     date: '08 Jan 2024',
     title: 'Sistema interno de análise e rastreio de performance',
     description: 'Dashboards inteligentes para monitoramento em tempo real de métricas e KPIs.',
-    category: 'Sistema'
+    category: 'Sistema',
+    slug: 'sistema-analise-rastreio-performance'
   },
   {
     date: '22 Dez 2023',
     title: 'Novas automações de funil e notificações inteligentes',
     description: 'Fluxos automatizados personalizados com notificações baseadas em comportamento.',
-    category: 'Automação'
+    category: 'Automação',
+    slug: 'automacoes-funil-notificacoes-inteligentes'
+  },
+  {
+    date: '10 Fev 2024',
+    title: 'SEO local e agendamento online para eventos',
+    description: 'Autoridade local, páginas otimizadas e agendamentos com maior conversão.',
+    category: 'SEO',
+    slug: 'seo-local-agendamento-eventos-chacara-recanto-dos-pinheiros'
+  },
+  {
+    date: '12 Mar 2024',
+    title: 'Automação com IA em marketplaces: DL Auto Peças',
+    description: 'Geração automática de anúncios, CRM integrado e governança de dados.',
+    category: 'Automação',
+    slug: 'automacao-ia-marketplaces-dl-auto-pecas'
+  },
+  {
+    date: '05 Abr 2024',
+    title: 'Branding e UX/UI para e-commerce: Majubella',
+    description: 'Identidade, UX orientada à conversão e operação omnichannel escalável.',
+    category: 'Produto',
+    slug: 'branding-ux-ecommerce-majubella'
   }
 ]
 
@@ -47,6 +73,7 @@ const processSteps = [
 ]
 
 export function UpdatesAndProcess() {
+  const { openModal } = useContactModal()
   return (
     <>
       {/* Updates Section */}
@@ -70,41 +97,42 @@ export function UpdatesAndProcess() {
 
             <div className="space-y-6">
               {updates.map((update, index) => (
-                <motion.div
-                  key={update.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group bg-surface border border-border rounded-xl p-6 hover:border-border-hover transition-all duration-300 linear-glow"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                        <Calendar className="w-5 h-5 text-accent" />
+                <Link key={update.title} to={`/blog/${update.slug}`} className="block">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="group bg-surface border border-border rounded-xl p-6 hover:border-border-hover transition-all duration-300 linear-glow"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                          <Calendar className="w-5 h-5 text-accent" />
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-xs text-text-muted font-light">
+                            {update.date}
+                          </span>
+                          <span className="px-2 py-1 text-xs font-medium bg-accent/10 text-accent rounded-md">
+                            {update.category}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-medium text-[#f7f8f8] mb-2 group-hover:text-accent transition-colors">
+                          {update.title}
+                        </h3>
+                        <p className="text-sm text-text-muted font-light leading-relaxed">
+                          {update.description}
+                        </p>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <ArrowRight className="w-5 h-5 text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
                       </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs text-text-muted font-light">
-                          {update.date}
-                        </span>
-                        <span className="px-2 py-1 text-xs font-medium bg-accent/10 text-accent rounded-md">
-                          {update.category}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-medium text-[#f7f8f8] mb-2 group-hover:text-accent transition-colors">
-                        {update.title}
-                      </h3>
-                      <p className="text-sm text-text-muted font-light leading-relaxed">
-                        {update.description}
-                      </p>
-                    </div>
-                    <div className="flex-shrink-0">
-                      <ArrowRight className="w-5 h-5 text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
 
@@ -115,9 +143,9 @@ export function UpdatesAndProcess() {
               viewport={{ once: true }}
               className="text-center mt-8"
             >
-              <a className="linear-button-ghost text-sm" href="#atualizacoes">
+              <Link className="linear-button-ghost text-sm" to="/blog">
                 <span>Ver todas as atualizações</span>
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -208,7 +236,11 @@ export function UpdatesAndProcess() {
                 <p className="text-sm text-text-muted font-light mb-4">
                   Vamos conversar sobre como podemos acelerar o crescimento do seu negócio.
                 </p>
-                <a className="linear-button text-sm" href="#iniciar-projeto">
+                <a
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); openModal() }}
+                >
                   <span>Iniciar projeto</span>
                 </a>
               </div>

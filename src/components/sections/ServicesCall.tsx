@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Target, Zap, Brain } from 'lucide-react'
+import { Sparkles, Target, Zap, Brain } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useContactModal } from '../../hooks/useContactModal'
 
 const services = [
   {
@@ -26,6 +27,7 @@ const services = [
 ]
 
 export function ServicesCall() {
+  const { openModal } = useContactModal()
   return (
     <section className="py-24 bg-background relative">
       <div className="container">
@@ -105,8 +107,9 @@ export function ServicesCall() {
                   <span>Conhecer serviços</span>
                 </Link>
                 <Link
-                  to="/contato"
-                  className="linear-button-secondary"
+                  to="#"
+                  onClick={(e) => { e.preventDefault(); openModal() }}
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
                 >
                   <span>Solicitar proposta</span>
                 </Link>

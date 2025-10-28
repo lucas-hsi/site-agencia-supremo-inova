@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import LogoSVG from '../icons/LogoSVG'
 import AnimatedDLLogo from '../icons/AnimatedDLLogo'
+import { useContactModal } from '../../hooks/useContactModal'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -23,6 +24,7 @@ export function Header() {
   // removed menuQuery state
   const location = useLocation()
   const navigate = useNavigate()
+  const { openModal } = useContactModal()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,7 +98,11 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <Link to="/contato" className="group linear-button text-base flex items-center justify-center gap-2 linear-glow-strong">
+            <Link
+              to="#"
+              onClick={(e) => { e.preventDefault(); openModal() }}
+              className="inline-flex items-center justify-center gap-2 min-h-[40px] rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-base font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+            >
               <span>Orçamento</span>
             </Link>
           </div>
@@ -174,7 +180,11 @@ export function Header() {
 
                   {/* CTA Orçamento */}
                   <div className="mt-4">
-                    <Link to="/contato" className="group linear-button text-base w-full min-h-[44px] flex items-center justify-center gap-2 linear-glow-strong">
+                    <Link
+                      to="#"
+                      onClick={(e) => { e.preventDefault(); openModal(); setIsOpen(false) }}
+                      className="inline-flex items-center justify-center gap-2 min-h-[44px] w-full rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-base font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+                    >
                       <span>Orçamento</span>
                     </Link>
                   </div>

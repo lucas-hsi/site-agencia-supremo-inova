@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useContactModal } from '../hooks/useContactModal'
 import { ArrowUpRight, TrendingUp, Users, Zap, Code, Sparkles, X } from 'lucide-react'
 import '../styles/cases-page.css'
 
@@ -151,6 +152,7 @@ const casesData = [
 ]
 
 export function Cases() {
+  const { openModal } = useContactModal()
   useEffect(() => {
     const cards = Array.from(document.querySelectorAll<HTMLElement>('.case-card'))
     const observer = new IntersectionObserver(
@@ -331,7 +333,11 @@ export function Cases() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <h2 className="cta-title">Pronto para o Próximo Case de Sucesso?</h2>
           <p className="cta-subtitle">Vamos construir algo memorável: visual premium, arquitetura sólida e impacto mensurável.</p>
-          <Link to="/contato" className="cta-primary">
+          <Link
+            to="#"
+            onClick={(e) => { e.preventDefault(); openModal() }}
+            className="cta-primary bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] text-white hover:brightness-110 hover:-translate-y-[2px] transition ease-in-out duration-200"
+          >
             <Sparkles className="w-5 h-5" />
             <span>Iniciar Projeto</span>
           </Link>

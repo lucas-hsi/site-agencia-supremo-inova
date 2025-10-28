@@ -2,26 +2,29 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    name: 'Ana Silva',
-    role: 'Head de Marketing',
-    company: 'TechNova',
-    content: 'A Supremo Inova elevou nosso funil de aquisição com integrações e automações inteligentes. Resultados além do esperado.',
+    name: 'Chácara Recanto dos Pinheiros',
+    role: 'Gestão de Eventos',
+    company: 'Chácara Recanto dos Pinheiros',
+    content:
+      'SEO local e agendamento online elevaram nossa presença: mais visibilidade, leads qualificados (+35%) e conversões em agendamentos (+22%). Atendimento digital fluido e marca alinhada ao público.',
     rating: 5,
   },
   {
-    name: 'Bruno Costa',
-    role: 'CTO',
-    company: 'RetailX',
-    content: 'Integrações sólidas e um time extremamente profissional. A experiência foi premium do início ao fim.',
+    name: 'DL Auto Peças',
+    role: 'Board',
+    company: 'DL Auto Peças',
+    content:
+      'Ecossistema escalável com IA e integrações robustas. Anúncios automáticos, CRM integrado e redução de 25% no tempo operacional com performance estável.',
     rating: 5,
   },
   {
-    name: 'Carla Mendes',
-    role: 'COO',
-    company: 'FinPro',
-    content: 'A solução entregue trouxe performance e confiabilidade em produção. Excelente padrão técnico e visual.',
+    name: 'Majubella',
+    role: 'E-commerce',
+    company: 'Majubella',
+    content:
+      'Branding, UX/UI e estratégia multicanal entregaram aumento de conversão (+18%) e crescimento em vendas (+32%), com operação omnichannel consistente.',
     rating: 5,
-  }
+  },
 ]
 
 export function Testimonials() {
@@ -89,7 +92,7 @@ export function Testimonials() {
         >
           <div className="glass-card-secondary p-6 inline-block">
             <p className="muted-on-glass text-sm">
-              +50 empresas satisfeitas com resultados concretos
+              + 30 empresas satisfeita com nossos resultados
             </p>
           </div>
         </motion.div>

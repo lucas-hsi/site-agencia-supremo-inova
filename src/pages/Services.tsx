@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Code2, Zap, Database, Smartphone, ArrowRight, MessageCircle, Target, Sparkles, Brain, BarChart3 } from 'lucide-react'
 import AnimatedSection from '../components/sections/AnimatedSection'
 import TechParticles from '../components/sections/TechParticles'
+import { useContactModal } from '../hooks/useContactModal'
  
 
 export default function Services() {
+  const { openModal } = useContactModal()
   const [selected, setSelected] = useState<ServiceKey | null>(null)
   const [isDesktop, setIsDesktop] = useState(false)
 
@@ -118,11 +120,19 @@ export default function Services() {
                         </div>
                       </div>
                       <div className="mt-6 flex flex-wrap gap-3">
-                        <a href={`#contato?service=${item.key}`} className="linear-button min-h-[40px] inline-flex items-center gap-2">
+                        <a
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); openModal() }}
+                          className="inline-flex items-center gap-2 min-h-[40px] rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+                        >
                           Quero esse serviço
                           <ArrowRight className="w-4 h-4" />
                         </a>
-                        <a href="#contato" className="linear-button-secondary min-h-[40px] inline-flex items-center gap-2">
+                        <a
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); openModal() }}
+                          className="inline-flex items-center gap-2 min-h-[40px] rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+                        >
                           Falar com especialista
                         </a>
                       </div>
@@ -200,11 +210,19 @@ export default function Services() {
                       </div>
 
                       <div className="mt-6 flex flex-wrap gap-3">
-                        <a href={`#contato?service=${item.key}`} className="linear-button min-h-[40px] inline-flex items-center gap-2">
+                        <a
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); openModal() }}
+                          className="inline-flex items-center gap-2 min-h-[40px] rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+                        >
                           Quero esse serviço
                           <ArrowRight className="w-4 h-4" />
                         </a>
-                        <a href="#contato" className="linear-button-secondary min-h-[40px] inline-flex items-center gap-2">
+                        <a
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); openModal() }}
+                          className="inline-flex items-center gap-2 min-h-[40px] rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+                        >
                           Falar com especialista
                         </a>
                       </div>

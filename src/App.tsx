@@ -5,10 +5,13 @@ import Home from './pages/Home'
 import { About } from './pages/About'
 import Services from './pages/Services'
 import { Cases } from './pages/Cases'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 
 import { Contact } from './pages/Contact'
 import Hub from './pages/Hub'
 import ScrollProgressBar from './components/ui/ScrollProgressBar'
+import ContactModal from './components/ui/ContactModal'
 
 function App() {
   return (
@@ -21,12 +24,16 @@ function App() {
           <Route path="/sobre" element={<About />} />
           <Route path="/servicos" element={<Services />} />
           <Route path="/cases" element={<Cases />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
           <Route path="/contato" element={<Contact />} />
           <Route path="/hub-negocios" element={<Hub />} />
         </Routes>
       </main>
       <Footer />
+      {/* Modal global de contato */}
+      <ContactModal />
     </div>
   )
 }

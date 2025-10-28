@@ -4,11 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 import './styles/globals.css'
 import './styles/premium-identity.css'
+import { ContactModalProvider } from './hooks/useContactModal'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ContactModalProvider>
+        <App />
+      </ContactModalProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

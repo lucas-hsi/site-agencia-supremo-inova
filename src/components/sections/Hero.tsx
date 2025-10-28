@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Play, ChevronDown } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
+import { useContactModal } from '../../hooks/useContactModal'
 
 export function Hero() {
+  const { openModal } = useContactModal()
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* removido bg de fundo para revelar o gradiente da Home */}
@@ -52,12 +54,20 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a className="group bg-[#32B8C6] text-white border border-[#32B8C6] rounded-xl px-6 py-3 font-medium transition-all duration-200 hover:bg-[#2a9fb0] hover:border-[#2a9fb0] text-base w-full sm:w-auto min-h-[44px] flex items-center justify-center gap-2" href="#contato">
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); openModal() }}
+                className="group inline-flex items-center justify-center gap-2 min-h-[44px] w-full sm:w-auto rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+              >
                 <span>Solicitar diagnóstico gratuito</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
-              
-              <a className="group bg-transparent text-white border border-white/30 rounded-xl px-6 py-3 font-medium transition-all duration-200 hover:bg-white/10 hover:border-white/50 text-base w-full sm:w-auto min-h-[44px] flex items-center justify-center gap-2" href="#especialista">
+
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); openModal() }}
+                className="group inline-flex items-center justify-center gap-2 min-h-[44px] w-full sm:w-auto rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
+              >
                 <span>Falar com um especialista</span>
               </a>
             </motion.div>
