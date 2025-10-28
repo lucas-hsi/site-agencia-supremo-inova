@@ -68,6 +68,11 @@ export default function Services() {
                 </div>
                 <h3 className="text-on-glass text-base font-medium mb-1">{item.title}</h3>
                 <p className="muted-on-glass text-sm">{item.desc}</p>
+                {/* Indicador de clique */}
+                <div className="mt-3 inline-flex items-center gap-2 text-[13px] text-text-secondary group-hover:text-[#f7f8f8] transition-colors">
+                  <span>Saiba mais</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                </div>
                 {/* Inline expansion preview on mobile */}
                 <AnimatePresence>
                   {!isDesktop && isSelected && (
@@ -220,7 +225,7 @@ export default function Services() {
               { title: 'UX impecável', icon: Users, desc: 'Interfaces consistentes, acessíveis e fluidas.' },
               { title: 'Processo robusto', icon: Workflow, desc: 'Discovery, entregas iterativas e rastreabilidade.' },
               { title: 'Execução premium', icon: Settings, desc: 'Padrões técnicos, automação e qualidade visual.' },
-            ].map((item, idx) => {
+            ].map((item) => {
               const Icon = item.icon
               return (
                 <div key={item.title} className="group glass-card-secondary card-hover p-6">
@@ -250,7 +255,7 @@ export default function Services() {
               { title: 'Design & UX', icon: Users, desc: 'Prototipação e validações com usuários.' },
               { title: 'Dev & QA', icon: Code2, desc: 'Implementação, testes e qualidade contínua.' },
               { title: 'Go-live', icon: Rocket, desc: 'Deploy, monitoramento e evolução.' },
-            ].map((item, idx) => {
+            ].map((item) => {
               const Icon = item.icon
               return (
                 <div key={item.title} className="group glass-card-secondary card-hover p-6">
