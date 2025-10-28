@@ -27,7 +27,7 @@ export function About() {
   return (
     <main className="min-h-screen bg-background">
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden hero-gradient-animated">
         <div className="bg-waves" />
         <div className="container section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -62,7 +62,7 @@ export function About() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="group glass-card-primary card-hover p-8">
+              <div className="group glass-card-primary card-hover p-8 aurora-card neon-blue shimmer-border glow-hover">
                 <div className="grid grid-cols-2 gap-6">
                   {[0, 1, 2, 3].map((i) => (
                     <motion.div
@@ -116,7 +116,7 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group glass-card-primary card-hover p-6"
+                  className="group glass-card-primary card-hover p-6 aurora-card neon-blue shimmer-border glow-hover"
                 >
                   <div className="icon-container w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                     <Icon className="icon-premium w-6 h-6 text-[#f7f8f8] group-hover:scale-105 transition-transform" />
@@ -149,7 +149,7 @@ export function About() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="group glass-card-primary card-hover p-8"
+              className="group glass-card-primary card-hover p-8 aurora-card neon-blue shimmer-border glow-hover"
             >
               <div className="space-y-4">
                 <p className="muted-on-glass font-light leading-relaxed">
