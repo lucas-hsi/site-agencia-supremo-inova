@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Code2, Zap, Workflow, Rocket, Settings, Users, Database, Smartphone, Target, ArrowRight, MessageCircle } from 'lucide-react'
+import { Code2, Zap, Database, Smartphone, ArrowRight, MessageCircle, Target, Sparkles, Brain, BarChart3 } from 'lucide-react'
+import AnimatedSection from '../components/sections/AnimatedSection'
+import TechParticles from '../components/sections/TechParticles'
+ 
 
 export default function Services() {
   const [selected, setSelected] = useState<ServiceKey | null>(null)
@@ -29,6 +32,8 @@ export default function Services() {
     <section className="py-24 bg-background-subtle relative overflow-hidden">
       {/* Background waves decor */}
       <div className="bg-waves" />
+      {/* Tech particles background for desktop */}
+      <TechParticles />
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -211,82 +216,84 @@ export default function Services() {
           )}
         </AnimatePresence>
 
-        {/* Differentials */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <h2 className="text-2xl font-light text-[#f7f8f8] mb-6">Diferenciais</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { title: 'UX impecável', icon: Users, desc: 'Interfaces consistentes, acessíveis e fluidas.' },
-              { title: 'Processo robusto', icon: Workflow, desc: 'Discovery, entregas iterativas e rastreabilidade.' },
-              { title: 'Execução premium', icon: Settings, desc: 'Padrões técnicos, automação e qualidade visual.' },
-            ].map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="group glass-card-secondary card-hover p-6">
-                  <div className="icon-container w-10 h-10 mb-3 rounded-xl">
-                    <Icon className="icon-premium w-5 h-5 text-[#f7f8f8]" />
-                  </div>
-                  <h3 className="text-on-glass text-sm font-medium mb-1">{item.title}</h3>
-                  <p className="muted-on-glass text-xs">{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-        </motion.div>
+        {/* Seções refatoradas com parallax, microanimações e storytelling */}
+        <AnimatedSection
+          id="solucoes-estrategicas"
+          title="Soluções estratégicas"
+          subtitle="Posicionamento, branding e crescimento com visão e método"
+          items={[
+            {
+              title: 'Identidade e Posicionamento de Marca',
+              subtitle: 'Direção clara para presença e autoridade',
+              description:
+                'Definimos essência, voz e diferenciais da marca com pesquisa e estratégia. Posicionamento consistente em todos os canais para aumentar reconhecimento e preferência.',
+              icon: Target,
+              impact:
+                'Aumenta reconhecimento e preferência, simplifica a decisão do cliente e melhora taxas de conversão com proposta de valor cristalina.'
+            },
+            {
+              title: 'Branding Estratégico e Storytelling de Impacto',
+              subtitle: 'Narrativas que conectam e geram valor percebido',
+              description:
+                'Criamos sistemas visuais e histórias fortes que elevam confiança, memória e diferenciação competitiva — reforçando valor e alinhamento com o negócio.',
+              icon: Sparkles,
+              impact:
+                'Eleva autoridade e memorabilidade, fortalece diferenciação competitiva e aumenta engajamento orgânico com narrativa coerente e consistente.'
+            },
+            {
+              title: 'Consultoria para Expansão Digital',
+              subtitle: 'Estratégia prática para crescer com previsibilidade',
+              description:
+                'Identificamos oportunidades, priorizamos iniciativas e desenhamos rotas de crescimento com planos acionáveis, métricas e KPIs claros para acelerar resultados.',
+              icon: Brain,
+              impact:
+                'Reduz custo de oportunidade, acelera aquisição priorizando por ROI e traz previsibilidade de crescimento com métricas acionáveis.'
+            },
+            {
+              title: 'CRM e Gestão Operacional Inteligente',
+              subtitle: 'Governança de processos e dados acionáveis',
+              description:
+                'Orquestramos CRMs, funis e automações com métricas e visibilidade ponta-a-ponta, aumentando eficiência, consistência e conversão em todo o ciclo.',
+              icon: BarChart3,
+              impact:
+                'Aumenta eficiência dos funis, reduz retrabalho, melhora tempo de resposta e viabiliza decisões mais rápidas com dados confiáveis.'
+            }
+          ]}
+        />
 
-        {/* Workflow */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <h2 className="text-2xl font-light text-[#f7f8f8] mb-6">Workflow</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-            {[
-              { title: 'Discovery', icon: Target, desc: 'Diagnóstico e plano de ação com clareza.' },
-              { title: 'Design & UX', icon: Users, desc: 'Prototipação e validações com usuários.' },
-              { title: 'Dev & QA', icon: Code2, desc: 'Implementação, testes e qualidade contínua.' },
-              { title: 'Go-live', icon: Rocket, desc: 'Deploy, monitoramento e evolução.' },
-            ].map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="group glass-card-secondary card-hover p-6">
-                  <div className="icon-container w-10 h-10 mb-3 rounded-xl">
-                    <Icon className="icon-premium w-5 h-5 text-[#f7f8f8]" />
-                  </div>
-                  <h3 className="text-on-glass text-sm font-medium mb-1">{item.title}</h3>
-                  <p className="muted-on-glass text-xs">{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-        </motion.div>
+        <AnimatedSection
+          id="tecnologia-e-automacao"
+          title="Tecnologia e automação"
+          subtitle="Integrações, IA e desenvolvimento sob medida com performance"
+          items={[
+            {
+              title: 'Automação com IA e Fluxos Inteligentes',
+              subtitle: 'Operações mais rápidas e escaláveis, com menos esforço',
+              description:
+                'Implementamos automações integradas a sistemas, CRMs e IA generativa que reduzem tempo operacional e elevam a eficiência da sua empresa.'
+            },
+            {
+              title: 'Sistemas e Integrações Personalizadas',
+              subtitle: 'Arquiteturas sob medida para seu cenário',
+              description:
+                'Construímos APIs, pipelines de dados e integrações confiáveis entre plataformas, com segurança, observabilidade e documentação que escalam.'
+            },
+            {
+              title: 'Atendimento Automatizado com IA e Chatbots',
+              subtitle: 'Escala no relacionamento com experiência premium',
+              description:
+                'Chatbots e assistentes com NLP e regras que qualificam leads, reduzem filas e aumentam satisfação, integrados aos seus sistemas e canais.'
+            },
+            {
+              title: 'Desenvolvimento Sob Medida (Frontend + Backend)',
+              subtitle: 'Produtos sólidos, performáticos e escaláveis',
+              description:
+                'Aplicações web e serviços com código limpo, SEO técnico e QA contínuo, alinhados ao seu negócio e preparados para evolução.'
+            }
+          ]}
+        />
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="group glass-card-primary card-hover p-8 inline-block">
-            <p className="muted-on-glass text-sm mb-4">
-              Pronto para elevar seu produto com visual premium e tecnologia de ponta?
-            </p>
-            <a href="#contato" className="linear-button-ghost min-h-[44px]">
-              Falar com especialista
-            </a>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   )
