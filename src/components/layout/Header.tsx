@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Menu, X, ChevronLeft, Mail, Phone } from 'lucide-react'
+import { Menu, X, ChevronLeft, Mail, Phone, Instagram } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import LogoSVG from '../icons/LogoSVG'
@@ -197,6 +197,17 @@ export function Header() {
                         className="text-text-secondary hover:text-white transition-colors text-sm"
                       >
                         +55 (11) 99999-9999
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Instagram size={18} className="text-accent" />
+                      <a
+                        href="https://www.instagram.com/agenciasupremoinova/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-text-secondary hover:text-white transition-colors text-sm"
+                      >
+                        Instagram
                       </a>
                     </div>
                     <div className="flex items-center justify-center py-6">

@@ -24,6 +24,15 @@ export function Footer() {
             <ul className="mt-2 space-y-2 text-sm">
               <li><Link to="/contato">Aplicar para o Hub</Link></li>
               <li><Link to="/contato">Agendar Conversa de Visão</Link></li>
+              <li>
+                <a
+                  href="https://www.instagram.com/agenciasupremoinova/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
             </ul>
           </div>
         </div>
