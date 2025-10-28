@@ -18,6 +18,12 @@ export default defineConfig({
     host: true,
     open: true,
   },
+  preview: {
+    port: 3000,
+    strictPort: true,
+    host: true,
+    open: true,
+  },
   build: {
     outDir: 'dist',
     sourcemap: true,

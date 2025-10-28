@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Menu, X, ChevronLeft, Mail, Phone, Instagram } from 'lucide-react'
+import { Menu, X, ChevronLeft } from 'lucide-react'
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import LogoSVG from '../icons/LogoSVG'
-import AnimatedDLLogo from '../icons/AnimatedDLLogo'
+// Removed DL logo in mobile menu; using SVG logo only
 import { useContactModal } from '../../hooks/useContactModal'
 
 const navigation = [
@@ -13,6 +14,7 @@ const navigation = [
   { name: 'Serviços', href: '/servicos' },
   { name: 'Hub de Negócios', href: '/hub-negocios' },
   { name: 'Cases', href: '/cases' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contato', href: '/contato' },
 ]
 
@@ -124,12 +126,12 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[999] overflow-y-auto bg-background/90 backdrop-blur-xl ring-1 ring-white/10"
+              className="fixed inset-0 z-[999] overflow-y-auto bg-background/70 backdrop-blur-md"
               role="dialog"
               aria-modal="true"
             >
               {/* Frosted glass texture overlay */}
-              <div className="pointer-events-none absolute inset-0 opacity-35 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.12),transparent_45%),radial-gradient(ellipse_at_bottom_right,rgba(255,255,255,0.06),transparent_45%)]" />
+              <div className="pointer-events-none absolute inset-0 opacity-30 bg-[radial-gradient(800px_400px_at_20%_10%,rgba(255,255,255,0.08),transparent_55%),radial-gradient(600px_300px_at_80%_60%,rgba(255,255,255,0.06),transparent_60%)]" />
 
               {/* Wrapper full height */}
               <div className="relative z-10 min-h-screen flex flex-col">
@@ -152,76 +154,56 @@ export function Header() {
                 </div>
 
                 {/* Content */}
-                <div className="px-4 sm:px-6 lg:px-8">
-                  {/* Logo */}
-                  <div className="flex justify-center items-center pb-4">
-                    <AnimatedDLLogo
-                      size={80}
-                      className="drop-shadow-sm"
-                      title="Supremo Inova"
-                    />
-                  </div>
+                <div className="px-4 sm:px-6 lg:px-8 py-4">
+                  {/* Floating Menu Panel */}
+                  <div className="mx-auto w-full max-w-md md:max-w-lg rounded-2xl border border-white/10 bg-gradient-to-br from-background-subtle/55 to-secondary/55 backdrop-blur-xl shadow-2xl shadow-black/40 ring-1 ring-white/10">
+                    <div className="p-5 md:p-6">
+                      {/* Logo no topo */}
+                      <div className="flex items-center justify-center pb-3">
+                        <LogoSVG size={84} className="drop-shadow-lg" />
+                      </div>
 
-                  {/* Navigation links */}
-                  <div className="flex flex-col space-y-3">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className={`block py-3 min-h-[44px] text-base font-medium transition-colors duration-200 hover:text-accent ${
-                          location.pathname === item.href ? 'text-accent' : 'text-text-secondary'
-                        }`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
+                      {/* Navigation links com destaque */}
+                      <div className="flex flex-col space-y-3">
+                        {navigation.map((item) => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className={`block min-h-[44px] px-4 py-3 rounded-xl border transition-colors duration-200 ${
+                              location.pathname === item.href
+                                ? 'bg-background/60 text-white border-white/20 ring-1 ring-white/20 shadow-lg shadow-black/30'
+                                : 'text-text-secondary border-white/10 hover:bg-background/50 hover:text-white hover:border-white/20'
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
 
-                  {/* CTA Orçamento */}
-                  <div className="mt-4">
-                    <Link
-                      to="#"
-                      onClick={(e) => { e.preventDefault(); openModal(); setIsOpen(false) }}
-                      className="inline-flex items-center justify-center gap-2 min-h-[44px] w-full rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] px-4 py-2 text-base font-semibold text-white shadow-lg shadow-blue-900/30 transition ease-in-out duration-200 hover:brightness-110 hover:-translate-y-[2px]"
-                    >
-                      <span>Orçamento</span>
-                    </Link>
-                  </div>
+                      {/* Social icons below menu */}
+                      <div className="mt-4 flex items-center justify-center gap-4">
+                        <a
+                          href="https://wa.me/5541997864760"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="WhatsApp"
+                          className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-surface/60 backdrop-blur-xs text-text-secondary hover:text-white hover:bg-background transition-colors"
+                        >
+                          <FaWhatsapp size={20} />
+                        </a>
+                        <a
+                          href="https://www.instagram.com/agenciasupremoinova/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Instagram"
+                          className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-surface/60 backdrop-blur-xs text-text-secondary hover:text-white hover:bg-background transition-colors"
+                        >
+                          <FaInstagram size={20} />
+                        </a>
+                      </div>
 
-                  {/* Contact Info */}
-                  <div className="mt-6 space-y-3 pb-8">
-                    <div className="flex items-center gap-3">
-                      <Mail size={18} className="text-accent" />
-                      <a
-                        href="mailto:contato@supremoinova.com"
-                        className="text-text-secondary hover:text-white transition-colors text-sm"
-                      >
-                        contato@supremoinova.com
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Phone size={18} className="text-accent" />
-                      <a
-                        href="tel:+55 (11) 99999-9999"
-                        className="text-text-secondary hover:text-white transition-colors text-sm"
-                      >
-                        +55 (11) 99999-9999
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Instagram size={18} className="text-accent" />
-                      <a
-                        href="https://www.instagram.com/agenciasupremoinova/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-text-secondary hover:text-white transition-colors text-sm"
-                      >
-                        Instagram
-                      </a>
-                    </div>
-                    <div className="flex items-center justify-center py-6">
-                      <LogoSVG size={88} className="drop-shadow-xl" />
+                      
                     </div>
                   </div>
                 </div>

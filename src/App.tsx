@@ -11,9 +11,12 @@ import BlogPost from './pages/BlogPost'
 import { Contact } from './pages/Contact'
 import Hub from './pages/Hub'
 import ScrollProgressBar from './components/ui/ScrollProgressBar'
+import ScrollToTopButton from './components/ui/ScrollToTopButton'
 import ContactModal from './components/ui/ContactModal'
+import { useScrollToTopOnRouteChange } from './hooks/useScrollToTopOnRouteChange'
 
 function App() {
+  useScrollToTopOnRouteChange()
   return (
     <div className="min-h-screen bg-background text-text-primary">
       <ScrollProgressBar />
@@ -34,6 +37,8 @@ function App() {
       <Footer />
       {/* Modal global de contato */}
       <ContactModal />
+      {/* Scroll to top button global */}
+      <ScrollToTopButton />
     </div>
   )
 }
